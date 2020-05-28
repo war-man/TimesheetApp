@@ -1,0 +1,16 @@
+.card {
+  margin-left: 10vw;
+  width: 80vw;
+  margin-bottom: 8px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: calc(100% - 280px) 140px 140px;
+
+  &__button {
+    float: right;
+    margin-right: 16px;
+  }
+}
+

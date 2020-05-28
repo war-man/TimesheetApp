@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="title" [routerLink]="[!!service.getUser() ? 'home' : '']">
+      Timesheets
+    </span>
+    <span class="spacer"></span>
+    <ng-container *ngIf="!!service.getUser()">
+      <ng-container *ngIf="service.getUser().isAdmin">
+        <button mat-raised-button [routerLink]="['projects']" style="margin-right: 20px">
+          Projects
+        </button>
+        <button mat-raised-button [routerLink]="['timesheets']" style="margin-right: 20px">
+          Timesheets
+        </button>
+      </ng-container>
+      <button mat-raised-button (click)="logout()">
+        Logout
+      </button>
+    </ng-container>
+  </mat-toolbar-row>
+</mat-toolbar>

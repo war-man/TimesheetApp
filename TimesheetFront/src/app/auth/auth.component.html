@@ -1,0 +1,60 @@
+<div class="page-background cards">
+  <div></div>
+  <mat-card class="card">
+    <mat-card-title>
+      Register
+    </mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="card__field" color="accent" appearance="outline">
+        <mat-label>First name</mat-label>
+        <input matInput [(ngModel)]="firstName">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="card__field" color="accent" appearance="outline">
+        <mat-label>Last name</mat-label>
+        <input matInput [(ngModel)]="lastName">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="card__field" color="accent" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput [(ngModel)]="emailReg">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="card__field" color="accent" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="passwordReg">
+      </mat-form-field>
+      <br>
+      <button mat-raised-button class="card__button" color="accent" (click)="register()"
+              [disabled]="!lastName || !firstName ! || !emailReg || !passwordReg">
+        Register
+      </button>
+      <br>
+    </mat-card-content>
+  </mat-card>
+  <div></div>
+  <mat-card class="card">
+    <mat-card-title>
+      Sign in
+    </mat-card-title>
+    <mat-card-content>
+      <br><br>
+      <mat-form-field class="card__field" color="primary" appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input id="email" matInput [(ngModel)]="emailLog">
+      </mat-form-field>
+      <br><br>
+      <mat-form-field class="card__field" color="primary" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input id="password" matInput type="password" [(ngModel)]="passwordLog" (keyup.enter)="signIn()">
+      </mat-form-field>
+      <br><br>
+      <button mat-raised-button class="card__button" color="primary" (click)="signIn()"
+              [disabled]="!emailLog || !passwordLog">
+        Sign in
+      </button>
+      <br><br>
+    </mat-card-content>
+  </mat-card>
+
+</div>

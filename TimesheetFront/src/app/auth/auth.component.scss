@@ -1,0 +1,19 @@
+.cards {
+  display: grid;
+  grid-template-columns: 10vw 32vw 16vw 32vw 10vw;
+}
+
+.card {
+  margin-top: 15vh;
+  height: 400px;
+}
+
+.card__field {
+  width: 100%;
+}
+
+.card__button {
+  width: 86px;
+  margin-left: calc(15vw - 43px);
+}
+

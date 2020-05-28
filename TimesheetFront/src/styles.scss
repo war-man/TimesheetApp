@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.title {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.page-background {
+  background-color: #F1F0F0;
+  width: 100%;
+  min-height: calc(100% - 64px);
+}
+
+
+.scrollable {
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

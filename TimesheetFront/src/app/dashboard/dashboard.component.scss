@@ -1,0 +1,35 @@
+.dashboard {
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: 5% calc(82% - 280px) 280px 5%;
+  grid-column-gap: 24px;
+}
+
+.reports {
+  height: 80vh;
+}
+
+.projects {
+  height: 80vh;
+}
+
+.card {
+  background-color: #F1F0F0;
+  margin-bottom: 8px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: calc(100% - 360px) 100px 120px 140px;
+
+  &__button {
+    float: right;
+    margin-right: 16px;
+  }
+
+  span {
+    margin-top: 8px;
+  }
+
+}
+

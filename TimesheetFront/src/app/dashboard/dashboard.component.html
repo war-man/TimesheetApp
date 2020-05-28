@@ -1,0 +1,61 @@
+<div class="dashboard page-background">
+  <div></div>
+  <div>
+    <mat-card class="reports scrollable">
+      <mat-card-title>
+        Reported times
+      </mat-card-title>
+      <mat-card-content>
+        <mat-card-content class="card">
+          <br>
+          <mat-form-field class="card__field" color="primary" appearance="outline" style="margin: 0 20px; width: 20%">
+            <mat-label>Hours</mat-label>
+            <input matInput [(ngModel)]="amount" type="number">
+          </mat-form-field>
+          <mat-form-field style="margin-right: 20px">
+            <mat-label>Project</mat-label>
+            <mat-select [formControl]="project">
+              <mat-option *ngFor="let project of projects" [value]="project">{{project.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field style="margin-right: 20px">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-flat-button color="primary" (click)="add(picker._selected.getTime())" [disabled]="!amount && !project.value">
+            Add time
+          </button>
+        </mat-card-content>
+        <mat-card *ngFor="let time of times" class="card">
+          <mat-card-content class="detail">
+            <span>{{'Project: ' + time.project.name}}</span>
+            <span>{{time.amount}} hours</span>
+            <span>{{time.date | date}}</span>
+            <button mat-flat-button class="detail__button" color="warn" (click)="delete(time.id)">
+              Delete
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+    <mat-card class="projects">
+      <mat-card-title>
+        Projects overview
+      </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-divider></mat-divider>
+          <ng-container *ngFor="let project of projects">
+            <mat-list-item>{{project.name + ': ' + project.loggedTime + ' hours'}}</mat-list-item>
+            <mat-divider></mat-divider>
+          </ng-container>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div></div>
+</div>

@@ -1,0 +1,15 @@
+<div class="page-background">
+  <div style="padding-top: 24px">
+    <mat-card *ngFor="let time of times" class="card">
+      <mat-card-content class="detail">
+        <span>{{time.user.firstName}} {{time.user.lastName}}</span>
+        <span>{{time.project.name}}</span>
+        <span>{{time.amount}} hours</span>
+        <span>{{time.date | date}}</span>
+        <button mat-flat-button class="detail__button" color="warn" (click)="delete(time.id)">
+          Delete
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

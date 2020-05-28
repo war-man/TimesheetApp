@@ -1,0 +1,20 @@
+.card {
+  margin-left: 10vw;
+  width: 80vw;
+  margin-bottom: 8px;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: calc((100% - 360px)/2) calc((100% - 360px)/2) 100px 120px 140px;
+
+  &__button {
+    float: right;
+    margin-right: 16px;
+  }
+
+  span {
+    margin-top: 8px;
+  }
+
+}
